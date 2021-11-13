@@ -19,7 +19,15 @@ class Application
         }
     }
 
-    public function logout()
+    public function signup($params)
     {
+        if ($params['name'] && $params['login'] && $params['password']) {
+            return $this->users->signup($params['name'], $params['login'], $params['password']);
+        }
+    }
+
+    public function logout($params)
+    {
+        return $this->users->logout($params['id']);
     }
 }

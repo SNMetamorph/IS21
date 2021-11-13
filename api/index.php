@@ -6,19 +6,25 @@ require_once('application/Application.php');
 function router($params)
 {
     $method = $params['method'];
-
-    if ($method) {
-
-        $app = new Application();
-
-        switch ($method) {
-            case 'login':
-                return $app->login($params);
-            case 'logout':
-                return $app->logout($params);
+    try {
+        if ($method) {
+            $app = new Application();
+            switch ($method) {
+                case 'login':
+                    return $app->login($params);
+                case 'signup':
+                    return $app->signup($params);
+                case 'logout':
+                    return $app->logout($params);
+            }
         }
+        return false;
+    } 
+    catch (Exception $e) {
+        print_r($e->getMessage());
+        //die();
+        return false;
     }
-    return false;
 }
 
 function answer($data)

@@ -1,0 +1,62 @@
+body {
+    font-size: 18px;
+    font-family: "Tahoma";
+}
+
+.form-field {
+    margin-top: 5px;
+}
+
+.form-field-label {
+    display: block;
+    color: white;
+}
+
+.form-field-input {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.login-window-button {
+    float: left;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #f9e88e;
+    padding: 6px;
+    font-size: 16;
+    font-family: "Tahoma";
+}
+
+#login-window-bg {
+    position: relative;
+    background: #364884;
+    margin: 100px auto;
+    width: 25%;
+    height: 20%;
+    min-width: 300px;
+    min-height: 250px;
+    border-radius: 4px;
+}
+
+#login-window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    transform: translate(-50%, -50%);
+}
+
+#login-window-btns {
+    padding-top: 1em;
+}
+
+#login-button-upload {
+    margin-left: 4%;
+    width: 48%;
+}
+
+#login-button-save {
+    width: 48%;
+}
