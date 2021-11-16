@@ -56,14 +56,21 @@ class DB
     public function addToken($id)
     {
         $token = md5(rand());
-        $query = "UPDATE `users` SET `token` = '".$token."' WHERE `users`.`id` = ".$id;
+        $query = "UPDATE `users` SET `token` = '".$token."' WHERE id = ".$id;
         $this->db->query($query);
         return $token;
     }
 
-    public function removeToken($id)
+    public function removeToken($token)
     {
-        $query = "UPDATE `users` SET `token` = NULL WHERE `users`.`id` = ".$id;
+        $query = "UPDATE `users` SET `token` = NULL WHERE token LIKE '".$token."'";
         $this->db->query($query);
+    }
+
+    public function getToken($id)
+    {
+        $query = "";
+        return $this->db->query($query)->fetchObject();
+
     }
 }

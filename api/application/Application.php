@@ -28,6 +28,6 @@ class Application
 
     public function logout($params)
     {
-        return $this->users->logout($params['id']);
+        return $this->users->logout($params['token']);
     }
 }

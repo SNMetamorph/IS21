@@ -9,14 +9,25 @@ class Users
     public function login($login, $password)
     {
         $user = $this->db->getUser($login);
-        $user->token = $this->db->addToken($user->id);
         if ($user) {
+            $user->token = $this->db->addToken($user->id);
             if ($password == $user->password) {
                 return array(
+                    'status' => 'ok',
                     'name' => $user->name,
                     'token' => $user->token
                 );
             }
+            else {
+                return array(
+                    'status' => 'invalid password'
+                );
+            }
+        }
+        else {
+            return array(
+                'status' => 'user not registered'
+            );
         }
     }
 
@@ -28,9 +39,9 @@ class Users
         );
     }
 
-    public function logout($id)
+    public function logout($token)
     {
-        $this->db->removeToken($id);
+        $this->db->removeToken($token);
         return array(
             'status' => 'ok'
         );
