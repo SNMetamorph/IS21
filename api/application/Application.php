@@ -30,4 +30,21 @@ class Application
     {
         return $this->users->logout($params['token']);
     }
+
+    public function checklog($params)
+    {
+        return $this->users->checklog($params['login']);
+    }
+
+    public function checkCookie()
+    {
+        if($_COOKIE) {
+            $token = $_COOKIE['token']; //токен хорошо прилетел
+            return $this->users->getUserFromToken($token);
+        } else {
+            return array(
+                'status' => 'no'
+            ); //??????
+        }
+    }
 }

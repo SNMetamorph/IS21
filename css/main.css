@@ -1,62 +1,81 @@
 body {
-    font-size: 18px;
-    font-family: "Tahoma";
+    background-size: 110%;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url('attachments/authbackgr.jpg');
 }
-
-.form-field {
-    margin-top: 5px;
+.btn {
+    box-shadow: 0 0 5px 2px rgba(50, 20, 50,0.6);
+    color: rgb(0, 0, 0);
+    border: 2px solid rgb(222 144 255 / 90%);
+    border-radius: 0px;
+    background-color: rgba(255,255,255)
 }
-
-.form-field-label {
-    display: block;
-    color: white;
+#show {
+    margin-top: 10%;
+    display: flex;
+    justify-content:center;
 }
+/* #auth {
+    box-shadow: 0 0 15px 3px rgb(199 85 199 / 60%);
+    padding: 2% 5%;
+    align-self: center;
+    border: 5px solid rgba(75, 0, 130, 0.5);
+    background-color: rgba(30,30,30,0.5);
+    border-radius: 25px;
+} */
 
-.form-field-input {
-    width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 5px;
+/* #signup {
+    box-shadow: 0 0 15px 3px rgb(199 85 199 / 60%);
+    padding: 2% 5%;
+    align-self: center;
+    border: 5px solid rgba(75, 0, 130, 0.5);
+    background-color: rgba(30,30,30,0.5);
+    border-radius: 25px;
+} */
+#output {
+    color: rgb(255 49 49);
+    text-align: center;
+    margin: 5% 0% 0% 0%;
+    text-shadow: 2px 2px 4px rgb(255 42 42 / 90%);
 }
-
-.login-window-button {
-    float: left;
-    border-radius: 4px;
-    cursor: pointer;
-    background: #f9e88e;
+.inp {
+    box-shadow: 0 0 5px 2px rgba(50, 20, 50, 0.6);
+    color: black;
+    border-radius: 5px;
+    border: 2px solid rgb(210 121 248 / 90%);
+    align-self:center;
+    font-size: 12px;
     padding: 6px;
-    font-size: 16;
-    font-family: "Tahoma";
+    margin: 4px;
 }
-
-#login-window-bg {
-    position: relative;
-    background: #364884;
-    margin: 100px auto;
-    width: 25%;
-    height: 20%;
-    min-width: 300px;
-    min-height: 250px;
-    border-radius: 4px;
+#textInfo {
+    text-align:center;
+    font-size: 16px;
+    color: rgb(255 148 255);
+    text-shadow: 5px 5px 5px rgb(58 8 58 / 60%);
+    font-family: Arial;
+    font-weight: 600;
 }
-
-#login-window {
+.internalDiv {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 90%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%) translateY(-50%);
+    box-shadow: 0 0 15px 3px rgb(199 85 199 / 60%);
+    padding: 2% 5%;
+    align-self: center;
+    border: 5px solid rgba(75, 0, 130, 0.5);
+    background-color: rgba(30,30,30,0.5);
+    border-radius: 25px;
 }
-
-#login-window-btns {
-    padding-top: 1em;
-}
-
-#login-button-upload {
-    margin-left: 4%;
-    width: 48%;
-}
-
-#login-button-save {
-    width: 48%;
+#registText {
+    font-size: 12px;
+    font-family: Arial;
+    padding: 0% 0% 0% 0%;
+    margin: 8% 0% 5% 0%;
+    color: rgba(255,255,255,0.7);
+    text-shadow: 2px 2px 3px rgb(191 42 255 / 90%);
 }

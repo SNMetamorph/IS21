@@ -16,6 +16,10 @@ function router($params)
                     return $app->signup($params);
                 case 'logout':
                     return $app->logout($params);
+                case 'checklog':
+                    return $app->checklog($params);
+                case 'checkCookie':
+                    return $app->checkCookie();
             }
         }
         return false;

@@ -7,7 +7,7 @@ class DB
         $port = '3306';
         $name = 'racing';
         $user = 'root';
-        $password = 'root';
+        $password = ''; //висело root
 
         try {
             $this->db = new PDO(
@@ -47,6 +47,12 @@ class DB
         return $result;
     }
 
+    public function getUserFromToken($token)
+    {
+        $query = 'SELECT * FROM users WHERE token = "' . $token . '"';
+        return $this->db->query($query)->fetchObject();
+    }
+
     public function addUser($name, $login, $password)
     {
         $query = "INSERT INTO `users` (`id`, `name`, `login`, `password`, `token`) VALUES (NULL, '" . $name . "', '" . $login . "', '" . $password . "', NULL)";
@@ -67,9 +73,9 @@ class DB
         $this->db->query($query);
     }
 
-    public function getToken($id)
+    public function getToken($login)
     {
-        $query = "";
+        $query = "SELECT `token` FROM users WHERE login = '" . $login . "' ";
         return $this->db->query($query)->fetchObject();
 
     }
